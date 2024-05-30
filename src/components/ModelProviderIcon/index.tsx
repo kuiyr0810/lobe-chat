@@ -2,8 +2,11 @@ import {
   Anthropic,
   Azure,
   Bedrock,
+  DeepSeek,
   Google,
   Groq,
+  LobeHub,
+  Minimax,
   Mistral,
   Moonshot,
   Ollama,
@@ -25,12 +28,20 @@ interface ModelProviderIconProps {
 
 const ModelProviderIcon = memo<ModelProviderIconProps>(({ provider }) => {
   switch (provider) {
+    case 'lobehub': {
+      return <LobeHub size={20} />;
+    }
+
     case ModelProvider.ZhiPu: {
       return <Zhipu size={20} />;
     }
 
     case ModelProvider.Bedrock: {
       return <Bedrock size={20} />;
+    }
+
+    case ModelProvider.DeepSeek: {
+      return <DeepSeek size={20} />;
     }
 
     case ModelProvider.Google: {
@@ -63,6 +74,10 @@ const ModelProviderIcon = memo<ModelProviderIconProps>(({ provider }) => {
 
     case ModelProvider.Perplexity: {
       return <Perplexity size={20} />;
+    }
+
+    case ModelProvider.Minimax: {
+      return <Minimax size={20} />;
     }
 
     case ModelProvider.Mistral: {
